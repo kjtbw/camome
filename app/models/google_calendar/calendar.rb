@@ -20,7 +20,7 @@ module GoogleCalendar
             calendar_id = k.split("-")[0]
             color = @calendars["#{calendar_id}"]["background_color"]
             v["items"].each do |event|
-              collection << GoogleCalendar::Event.new(event,color).to_fullcalendar
+              collection << GoogleCalendar::Event.new(event,color,calendar_id).to_fullcalendar
             end
           end
         end
